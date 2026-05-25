@@ -316,7 +316,7 @@ export default function BioClient({ allSlugs }: { allSlugs: string[] }) {
     const timers = PHRASES.map((_, i) =>
       setTimeout(() =>
         setVisible(prev => { const n = [...prev]; n[i] = true; return n }),
-        i * 700 + 300
+        i * 2000 + 300
       )
     )
     return () => timers.forEach(clearTimeout)
