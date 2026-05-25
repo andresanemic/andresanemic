@@ -14,13 +14,22 @@ function shuffle(arr: Poem[]): Poem[] {
   return a
 }
 
-const PAGES = [9, 7] as const // 9 primeras, 7 restantes
+const FIRST_DESKTOP = 9
 
 export default function PoemGrid({ poems }: { poems: Poem[] }) {
   const [shuffled, setShuffled] = useState<Poem[] | null>(null)
   const [page, setPage] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const gridRef = useRef<HTMLDivElement>(null)
   const busy = useRef(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => { setIsMobile(e.matches); setPage(0) }
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   useEffect(() => {
     setShuffled(shuffle(poems))
@@ -77,12 +86,14 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
     })
   }
 
+  const firstPageSize = isMobile ? 3 : FIRST_DESKTOP
+
   // Placeholders mientras el shuffle no ocurrió (server → client)
   if (!shuffled) {
     return (
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {Array.from({ length: PAGES[0] }).map((_, i) => (
+          {Array.from({ length: firstPageSize }).map((_, i) => (
             <div key={i} className="h-44 border border-white/10" />
           ))}
         </div>
@@ -93,8 +104,15 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
     )
   }
 
-  const slices = [shuffled.slice(0, PAGES[0]), shuffled.slice(PAGES[0])]
-  const current = slices[page]
+  const totalPages = isMobile ? Math.ceil(shuffled.length / 3) : 2
+  const current = isMobile
+    ? shuffled.slice(page * 3, page * 3 + 3)
+    : page === 0 ? shuffled.slice(0, FIRST_DESKTOP) : shuffled.slice(FIRST_DESKTOP)
+
+  const hasPrev = page > 0
+  const hasNext = page < totalPages - 1
+
+  const btnClass = 'w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200'
 
   return (
     <div>
@@ -107,24 +125,12 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
         ))}
       </div>
 
-      {/* Flechas: solo la relevante para la página actual */}
-      <div className="flex justify-end mt-10">
-        {page === 0 ? (
-          <button
-            onClick={() => goTo(1)}
-            aria-label="Ver más poemas"
-            className="w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200"
-          >
-            →
-          </button>
-        ) : (
-          <button
-            onClick={() => goTo(0)}
-            aria-label="Volver a los primeros poemas"
-            className="w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200"
-          >
-            ←
-          </button>
+      <div className="flex justify-end gap-3 mt-10">
+        {hasPrev && (
+          <button onClick={() => goTo(page - 1)} aria-label="Página anterior" className={btnClass}>←</button>
+        )}
+        {hasNext && (
+          <button onClick={() => goTo(page + 1)} aria-label="Página siguiente" className={btnClass}>→</button>
         )}
       </div>
     </div>

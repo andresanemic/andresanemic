@@ -6,9 +6,10 @@ import Link from 'next/link'
 
 interface Props {
   allSlugs: string[]
+  inline?: boolean
 }
 
-export default function PoemsReadCounter({ allSlugs }: Props) {
+export default function PoemsReadCounter({ allSlugs, inline }: Props) {
   const [count, setCount] = useState(0)
   const router = useRouter()
 
@@ -32,7 +33,7 @@ export default function PoemsReadCounter({ allSlugs }: Props) {
   }
 
   return (
-    <div className="fixed top-6 right-8 z-10 flex items-center gap-6">
+    <div className={inline ? 'flex items-center gap-6' : 'fixed top-6 right-8 z-10 flex items-center gap-6'}>
       {count > 0 && (
         <button
           onClick={goToUnread}

@@ -16,9 +16,10 @@ module.exports = {
       },
       // ─── TIPOGRAFÍAS CENTRALIZADAS ───────────────────────────────────────
       fontFamily: {
-        poem: ['var(--font-poem)', 'Georgia', 'serif'],
-        ui:   ['var(--font-ui)',   'system-ui', 'sans-serif'],
-        hero: ['var(--font-hero)', 'Georgia', 'serif'],
+        poem:       ['var(--font-poem)',       'Georgia', 'serif'],
+        ui:         ['var(--font-ui)',         'system-ui', 'sans-serif'],
+        hero:       ['var(--font-hero)',       'Georgia', 'serif'],
+        baskerville:['var(--font-baskerville)','Georgia', 'serif'],
       },
     },
   },
