@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Playfair_Display, Josefin_Sans } from 'next/font/google'
 import './globals.css'
 import GrainOverlay    from '@/components/GrainOverlay'
 import Cursor          from '@/components/Cursor'
@@ -14,6 +14,13 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-poem',
+  display: 'swap',
+})
+
+const josefin = Josefin_Sans({
+  subsets: ['latin'],
+  weight: '100',
+  variable: '--font-hero',
   display: 'swap',
 })
 
@@ -33,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es" className={`${inter.variable} ${playfair.variable} ${josefin.variable}`}>
       <body className="bg-brand-black text-brand-white antialiased">
         <SmoothScroll />
         <GrainOverlay />

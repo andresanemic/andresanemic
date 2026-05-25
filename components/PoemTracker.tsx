@@ -8,6 +8,7 @@ export default function PoemTracker({ slug }: { slug: string }) {
     if (!read.includes(slug)) {
       read.push(slug)
       sessionStorage.setItem('read_poems', JSON.stringify(read))
+      window.dispatchEvent(new CustomEvent('poems-read-updated'))
     }
   }, [slug])
 

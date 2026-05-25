@@ -29,10 +29,7 @@ export default async function PoemPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-brand-black text-brand-white">
       <article className="max-w-2xl mx-auto px-8 pt-36 pb-32">
-        <h1 className="font-poem text-3xl md:text-4xl text-brand-white mb-16 font-normal italic">
-          {poem.title}
-        </h1>
-        <PoemBody stanzas={poem.stanzas} />
+        <PoemBody stanzas={poem.stanzas} title={poem.title} />
       </article>
     </main>
   )

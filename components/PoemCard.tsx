@@ -52,10 +52,11 @@ export default function PoemCard({ poem }: { poem: Poem }) {
   // ── Click: escala y navega ────────────────────────────────────────────────
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
+    window.dispatchEvent(new CustomEvent('page-exit'))
     gsap.to(artRef.current, {
-      scale: 1.04,
-      duration: 0.18,
-      ease: 'power2.in',
+      scale: 1.07,
+      duration: 0.75,
+      ease: 'expo.out',
       onComplete: () => router.push(href),
     })
   }

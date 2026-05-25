@@ -14,6 +14,7 @@ export default function Hero() {
   const discWrapperRef   = useRef<HTMLDivElement>(null)
   const nameRef          = useRef<HTMLHeadingElement>(null)
   const glitchFn         = useRef<() => void>(() => {})
+  const sectionRef       = useRef<HTMLElement>(null)
 
   // ── Scramble: solo en la primera visita de la sesión ─────────────────────
   useEffect(() => {
@@ -76,11 +77,18 @@ export default function Hero() {
     glitchFn.current = glitch
 
     const schedule = () => {
-      id = setTimeout(() => { glitch(); schedule() }, 12000 + Math.random() * 3000)
+      id = setTimeout(() => { glitch(); schedule() }, 20000 + Math.random() * 8000)
     }
 
     schedule()
     return () => clearTimeout(id)
+  }, [])
+
+  // ── Fade-in del hero ─────────────────────────────────────────────────────
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    gsap.fromTo(el, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 2.2, delay: 0.4, ease: 'power1.out' })
   }, [])
 
   // ── Parallax del disco según posición del mouse ───────────────────────────
@@ -135,6 +143,8 @@ export default function Hero() {
 
   return (
     <section
+      ref={sectionRef}
+      style={{ opacity: 0 }}
       className="h-screen flex flex-col items-center justify-center bg-brand-black select-none overflow-hidden"
       aria-label="Hero"
     >
@@ -169,13 +179,13 @@ export default function Hero() {
           <h1
             ref={nameRef}
             onClick={() => glitchFn.current()}
-            className="font-ui text-4xl sm:text-5xl md:text-6xl font-light tracking-[0.15em] sm:tracking-[0.35em] text-brand-white uppercase px-4 sm:px-0 cursor-pointer"
+            className="font-hero text-4xl sm:text-5xl md:text-6xl tracking-[0.15em] sm:tracking-[0.35em] text-brand-white uppercase px-4 sm:px-0 cursor-pointer"
           >
             andresanemic
           </h1>
           <p className="font-ui text-xs sm:text-sm text-brand-gray tracking-widest mx-auto">
-            Andrés Peña, periodista chileno.<br />
-            Escribo cuando estoy triste.
+            andrés peña mellado, periodista chileno.<br />
+            escribo cuando estoy triste.
           </p>
         </div>
 

@@ -5,38 +5,49 @@ import gsap from 'gsap'
 
 interface Props {
   stanzas: string[][]
+  title: string
 }
 
-export default function PoemBody({ stanzas }: Props) {
+export default function PoemBody({ stanzas, title }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const titleRef     = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     const el = containerRef.current
     if (!el) return
 
-    const lines = el.querySelectorAll<HTMLElement>('[data-line]')
+    // Título: aparece primero
+    gsap.fromTo(
+      titleRef.current,
+      { opacity: 0, y: 8 },
+      { opacity: 1, y: 0, duration: 0.9, delay: 0.3, ease: 'power2.out' }
+    )
 
-    // Las líneas ya llegan con opacity:0 desde el SSR (style inline en el JSX),
-    // así que no hay flash. GSAP solo necesita animar hacia opacity:1.
+    // Líneas: aparecen después, más lentas y con más peso
+    const lines = el.querySelectorAll<HTMLElement>('[data-line]')
     gsap.fromTo(
       lines,
-      { opacity: 0, y: 10 },
+      { opacity: 0, y: 14 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.6,
-        stagger: 0.07,
+        duration: 1.0,
+        stagger: 0.11,
         ease: 'power2.out',
-        delay: 0.45,
+        delay: 0.6,
       }
     )
   }, [])
 
   return (
-    <div
-      ref={containerRef}
-      className="font-poem text-lg md:text-xl text-brand-white"
-    >
+    <div ref={containerRef} className="font-poem text-lg md:text-xl text-brand-white">
+      <h1
+        ref={titleRef}
+        style={{ opacity: 0 }}
+        className="text-3xl md:text-4xl text-brand-white mb-16 font-normal italic"
+      >
+        {title}
+      </h1>
       {stanzas.map((stanza, si) => (
         <div key={si} className="mb-10">
           {stanza.map((line, li) => (

@@ -9,9 +9,10 @@ interface Props {
   currentSlug: string
 }
 
-const FADE_OUT_DURATION = 0.5
-const FADE_IN_DURATION  = 1.2
-const FADE_EASE         = 'power1.inOut'
+const FADE_OUT_DURATION = 0.18
+const FADE_IN_DURATION  = 1.4
+const FADE_IN_EASE      = 'power2.out'
+const FADE_OUT_EASE     = 'power2.in'
 
 export default function RandomPoemArrow({ allSlugs, currentSlug }: Props) {
   const router  = useRouter()
@@ -23,22 +24,25 @@ export default function RandomPoemArrow({ allSlugs, currentSlug }: Props) {
     const btn = btnRef.current
     if (!btn) return
     busy.current = false
-    gsap.to(btn, { opacity: 1, duration: FADE_IN_DURATION, ease: FADE_EASE })
+    gsap.to(btn, { opacity: 1, duration: FADE_IN_DURATION, ease: FADE_IN_EASE })
   }, [currentSlug])
 
   const goToRandom = () => {
     if (busy.current) return
-    const others = allSlugs.filter(s => s !== currentSlug)
-    if (others.length === 0) return
+    const read: string[] = JSON.parse(sessionStorage.getItem('read_poems') ?? '[]')
+    const others  = allSlugs.filter(s => s !== currentSlug)
+    const unread  = others.filter(s => !read.includes(s))
+    const pool    = unread.length > 0 ? unread : others
+    if (pool.length === 0) return
 
     busy.current = true
-    const pick = others[Math.floor(Math.random() * others.length)]
+    const pick = pool[Math.floor(Math.random() * pool.length)]
 
     // Fade out a la misma velocidad que el fade in
     gsap.to(btnRef.current, {
       opacity: 0,
       duration: FADE_OUT_DURATION,
-      ease: FADE_EASE,
+      ease: FADE_OUT_EASE,
       onComplete: () => router.push(`/${encodeURIComponent(pick)}`),
     })
   }
@@ -51,7 +55,7 @@ export default function RandomPoemArrow({ allSlugs, currentSlug }: Props) {
       title="Poema aleatorio"
       // opacity:0 inicial → GSAP lo anima a 1; sin flash en el primer render
       style={{ opacity: 0 }}
-      className="fixed bottom-8 right-8 w-11 h-11 flex items-center justify-center border border-white/20 bg-brand-black/70 backdrop-blur-sm text-brand-gray hover:text-brand-white hover:border-white/50 transition-colors duration-200"
+      className="fixed bottom-8 right-8 w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200"
     >
       <span className="text-lg leading-none">→</span>
     </button>

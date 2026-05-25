@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 interface Props {
   allSlugs: string[]
@@ -11,12 +12,16 @@ export default function PoemsReadCounter({ allSlugs }: Props) {
   const [count, setCount] = useState(0)
   const router = useRouter()
 
-  useEffect(() => {
+  const sync = () => {
     const read: string[] = JSON.parse(sessionStorage.getItem('read_poems') ?? '[]')
     setCount(read.length)
-  }, [])
+  }
 
-  if (count === 0) return null
+  useEffect(() => {
+    sync()
+    window.addEventListener('poems-read-updated', sync)
+    return () => window.removeEventListener('poems-read-updated', sync)
+  }, [])
 
   const goToUnread = () => {
     const read: string[] = JSON.parse(sessionStorage.getItem('read_poems') ?? '[]')
@@ -27,11 +32,21 @@ export default function PoemsReadCounter({ allSlugs }: Props) {
   }
 
   return (
-    <button
-      onClick={goToUnread}
-      className="fixed top-6 right-8 z-10 font-ui text-[10px] tracking-widest uppercase text-brand-gray/60 hover:text-brand-gray transition-colors duration-200"
-    >
-      {count} {count === 1 ? 'leído' : 'leídos'}
-    </button>
+    <div className="fixed top-6 right-8 z-10 flex items-center gap-6">
+      {count > 0 && (
+        <button
+          onClick={goToUnread}
+          className="font-ui text-xs tracking-widest uppercase text-brand-gray hover:text-brand-white transition-colors duration-200"
+        >
+          {count} {count === 1 ? 'leído' : 'leídos'}
+        </button>
+      )}
+      <Link
+        href="/bio"
+        className="font-ui text-xs tracking-widest uppercase text-brand-gray hover:text-brand-white transition-colors duration-200"
+      >
+        bio
+      </Link>
+    </div>
   )
 }

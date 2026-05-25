@@ -18,6 +18,7 @@ module.exports = {
       fontFamily: {
         poem: ['var(--font-poem)', 'Georgia', 'serif'],
         ui:   ['var(--font-ui)',   'system-ui', 'sans-serif'],
+        hero: ['var(--font-hero)', 'Georgia', 'serif'],
       },
     },
   },

@@ -28,7 +28,7 @@ export default function GrainOverlay() {
         for (let i = 0; i < data.length; i += 4) {
           const v = (Math.random() * 255) | 0
           data[i] = data[i + 1] = data[i + 2] = v
-          data[i + 3] = 12
+          data[i + 3] = 11
         }
         ctx.putImageData(imageData, 0, 0)
       }
@@ -51,6 +51,7 @@ export default function GrainOverlay() {
         pointerEvents: 'none',
         zIndex: 9000,
         opacity: 1,
+        imageRendering: 'pixelated',
       }}
     />
   )

@@ -26,14 +26,39 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
     setShuffled(shuffle(poems))
   }, [poems])
 
-  // Anima la entrada cada vez que cambia el contenido
+  // Scroll-reveal: cada card aparece al entrar en el viewport
   useEffect(() => {
-    if (!gridRef.current || !shuffled) return
-    gsap.fromTo(
-      gridRef.current,
-      { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+    const grid = gridRef.current
+    if (!grid || !shuffled) return
+
+    // Resetea el wrapper (puede venir con opacity:0 del goTo de paginación)
+    gsap.set(grid, { opacity: 1, y: 0 })
+
+    const cards = Array.from(grid.children) as HTMLElement[]
+    gsap.set(cards, { opacity: 0, y: 28 })
+
+    let fired = 0
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return
+          const i = cards.indexOf(entry.target as HTMLElement)
+          gsap.to(entry.target, {
+            opacity: 1,
+            y: 0,
+            duration: 2.0,
+            delay: fired < cards.length ? i * 0.28 : 0,
+            ease: 'power2.out',
+          })
+          fired++
+          observer.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.12 }
     )
+
+    cards.forEach(c => observer.observe(c))
+    return () => observer.disconnect()
   }, [page, shuffled])
 
   const goTo = (next: number) => {
@@ -43,8 +68,8 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
     gsap.to(gridRef.current, {
       opacity: 0,
       y: -16,
-      duration: 0.2,
-      ease: 'power2.in',
+      duration: 0.65,
+      ease: 'power1.in',
       onComplete: () => {
         setPage(next)
         busy.current = false
@@ -88,7 +113,7 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
           <button
             onClick={() => goTo(1)}
             aria-label="Ver más poemas"
-            className="w-11 h-11 flex items-center justify-center border border-white/20 text-brand-gray hover:text-brand-white hover:border-white/50 transition-all duration-200"
+            className="w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200"
           >
             →
           </button>
@@ -96,7 +121,7 @@ export default function PoemGrid({ poems }: { poems: Poem[] }) {
           <button
             onClick={() => goTo(0)}
             aria-label="Volver a los primeros poemas"
-            className="w-11 h-11 flex items-center justify-center border border-white/20 text-brand-gray hover:text-brand-white hover:border-white/50 transition-all duration-200"
+            className="w-11 h-11 flex items-center justify-center border border-brand-white bg-brand-white text-brand-black hover:bg-transparent hover:text-brand-white transition-all duration-200"
           >
             ←
           </button>

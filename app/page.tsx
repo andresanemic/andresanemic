@@ -13,7 +13,7 @@ export default function Home() {
       <main className="bg-brand-black min-h-screen">
         <PoemsReadCounter allSlugs={poems.map(p => p.slug)} />
         <Hero />
-        <section id="poemas" className="py-24 px-6 md:px-12 max-w-5xl mx-auto" aria-label="Poemas">
+        <section id="poemas" className="pt-10 pb-24 px-6 md:px-12 max-w-5xl mx-auto" aria-label="Poemas">
           <PoemGrid poems={poems} />
         </section>
         <SectionDivider />

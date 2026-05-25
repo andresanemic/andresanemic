@@ -6,6 +6,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    cursor: none;
+  }
+
+  * {
+    cursor: none !important;
   }
 
   body {

@@ -1,8 +1,9 @@
 import Link from 'next/link'
 import { getAllPoems } from '@/lib/poems'
-import RandomPoemArrow from '@/components/RandomPoemArrow'
-import PageTransition  from '@/components/PageTransition'
-import PoemTracker     from '@/components/PoemTracker'
+import RandomPoemArrow   from '@/components/RandomPoemArrow'
+import PageTransition    from '@/components/PageTransition'
+import PoemTracker       from '@/components/PoemTracker'
+import PoemsReadCounter  from '@/components/PoemsReadCounter'
 
 interface Props {
   children: React.ReactNode
@@ -26,6 +27,7 @@ export default async function SlugLayout({ children, params }: Props) {
         </Link>
       </nav>
 
+      <PoemsReadCounter allSlugs={allSlugs} />
       <PoemTracker slug={currentSlug} />
       <RandomPoemArrow allSlugs={allSlugs} currentSlug={currentSlug} />
 
