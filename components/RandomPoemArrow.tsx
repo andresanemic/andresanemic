@@ -9,10 +9,10 @@ interface Props {
   currentSlug: string
 }
 
-const FADE_OUT_DURATION = 0.18
-const FADE_IN_DURATION  = 1.4
-const FADE_IN_EASE      = 'power2.out'
-const FADE_OUT_EASE     = 'power2.in'
+const FADE_OUT_DURATION = 0.5
+const FADE_IN_DURATION  = 1.2
+const FADE_IN_EASE      = 'power1.inOut'
+const FADE_OUT_EASE     = 'power1.inOut'
 
 export default function RandomPoemArrow({ allSlugs, currentSlug }: Props) {
   const router  = useRouter()

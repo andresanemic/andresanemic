@@ -90,28 +90,42 @@ function shuffled<T>(arr: T[]): T[] {
 type Rect = { top: number; left: number; w: number; h: number }
 type Pos  = { top: number; left: number }
 
-function noOverlap(a: Rect, b: Rect): boolean {
+function noOverlap(a: Rect, b: Rect, gap = GAP): boolean {
   return (
-    a.left + a.w + GAP <= b.left ||
-    b.left + b.w + GAP <= a.left ||
-    a.top  + a.h + GAP <= b.top  ||
-    b.top  + b.h + GAP <= a.top
+    a.left + a.w + gap <= b.left ||
+    b.left + b.w + gap <= a.left ||
+    a.top  + a.h + gap <= b.top  ||
+    b.top  + b.h + gap <= a.top
   )
 }
 
-function findPos(wPct: number, hPct: number, placed: Rect[]): Pos {
-  const pad    = 2
-  const topMax = 93 - hPct
+function findPos(wPct: number, hPct: number, placed: Rect[], mobile = false): Pos {
+  const gap    = mobile ? 1.5 : GAP
+  const pad    = mobile ? 1   : 2
+  const topMax = mobile ? 97 - hPct : 93 - hPct
   const lefMax = 97 - wPct
+  const tries  = mobile ? 1500 : 500
 
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < tries; i++) {
     const top  = pad + Math.random() * (topMax - pad)
     const left = pad + Math.random() * (lefMax - pad)
     const c: Rect = { top, left, w: wPct, h: hPct }
-    if (placed.every(p => noOverlap(c, p))) return { top, left }
+    if (placed.every(p => noOverlap(c, p, gap))) return { top, left }
   }
 
-  const lastBottom = placed.reduce((m, p) => Math.max(m, p.top + p.h + GAP), pad)
+  // Fallback en grilla para móvil (más robusto que apilar al fondo)
+  if (mobile) {
+    for (let row = 0; row < 12; row++) {
+      for (let col = 0; col < 4; col++) {
+        const top  = pad + (row / 12) * (topMax - pad)
+        const left = pad + (col / 4)  * (lefMax - pad)
+        const c: Rect = { top, left, w: wPct, h: hPct }
+        if (placed.every(p => noOverlap(c, p, gap))) return { top, left }
+      }
+    }
+  }
+
+  const lastBottom = placed.reduce((m, p) => Math.max(m, p.top + p.h + gap), pad)
   return { top: Math.min(lastBottom, topMax), left: pad + Math.random() * 30 }
 }
 
@@ -286,8 +300,9 @@ export default function BioClient({ allSlugs }: { allSlugs: string[] }) {
     html.style.overflow = 'hidden'
 
     document.fonts.ready.then(() => {
-      const vw = window.innerWidth
-      const vh = window.innerHeight
+      const vw     = window.innerWidth
+      const vh     = window.innerHeight
+      const mobile = vw < 768
 
       const dims = measureRefs.current.map(el => {
         if (!el) return { w: 20, h: 5 }
@@ -300,7 +315,7 @@ export default function BioClient({ allSlugs }: { allSlugs: string[] }) {
       const posMap: Pos[]  = new Array(PHRASES.length)
 
       order.forEach(i => {
-        const pos = findPos(dims[i].w, dims[i].h, placed)
+        const pos = findPos(dims[i].w, dims[i].h, placed, mobile)
         placed.push({ ...pos, w: dims[i].w, h: dims[i].h })
         posMap[i] = pos
       })
