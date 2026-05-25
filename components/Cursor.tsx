@@ -54,13 +54,13 @@ export default function Cursor() {
         position: 'fixed', top: 0, left: 0,
         width: 5, height: 5, borderRadius: '50%',
         background: 'white', mixBlendMode: 'difference',
-        pointerEvents: 'none', zIndex: 9999,
+        pointerEvents: 'none', zIndex: 9999, opacity: 0,
       }} />
       <div ref={ringRef} aria-hidden="true" style={{
         position: 'fixed', top: 0, left: 0,
         width: 30, height: 30, borderRadius: '50%',
         border: '1px solid rgba(255,255,255,0.5)',
-        pointerEvents: 'none', zIndex: 9999,
+        pointerEvents: 'none', zIndex: 9999, opacity: 0,
       }} />
     </>
   )
