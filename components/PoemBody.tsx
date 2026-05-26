@@ -16,14 +16,12 @@ export default function PoemBody({ stanzas, title }: Props) {
     const el = containerRef.current
     if (!el) return
 
-    // Título: aparece primero
     gsap.fromTo(
       titleRef.current,
       { opacity: 0, y: 8 },
       { opacity: 1, y: 0, duration: 0.9, delay: 0.3, ease: 'power2.out' }
     )
 
-    // Líneas: aparecen después, más lentas y con más peso
     const lines = el.querySelectorAll<HTMLElement>('[data-line]')
     gsap.fromTo(
       lines,
@@ -51,7 +49,13 @@ export default function PoemBody({ stanzas, title }: Props) {
       {stanzas.map((stanza, si) => (
         <div key={si} className="mb-10">
           {stanza.map((line, li) => (
-            <p key={li} data-line="" className="leading-[1.4] mb-[0.6em]" style={{ opacity: 0 }}>
+            <p
+              key={li}
+              data-line=""
+              data-first={li === 0 ? 'true' : undefined}
+              className="leading-[1.4] mb-[0.6em] whitespace-pre-wrap"
+              style={{ opacity: 0 }}
+            >
               {line}
             </p>
           ))}
