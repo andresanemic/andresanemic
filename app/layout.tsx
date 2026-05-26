@@ -4,6 +4,7 @@ import './globals.css'
 import GrainOverlay    from '@/components/GrainOverlay'
 import Cursor          from '@/components/Cursor'
 import SmoothScroll    from '@/components/SmoothScroll'
+import { Analytics }   from '@vercel/analytics/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GrainOverlay />
         <Cursor />
         {children}
+        <Analytics />
       </body>
     </html>
   )
