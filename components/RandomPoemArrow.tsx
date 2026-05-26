@@ -38,13 +38,15 @@ export default function RandomPoemArrow({ allSlugs, currentSlug }: Props) {
     busy.current = true
     const pick = pool[Math.floor(Math.random() * pool.length)]
 
-    // Fade out a la misma velocidad que el fade in
+    window.dispatchEvent(new Event('page-exit'))
+
     gsap.to(btnRef.current, {
       opacity: 0,
       duration: FADE_OUT_DURATION,
       ease: FADE_OUT_EASE,
-      onComplete: () => router.push(`/${encodeURIComponent(pick)}`),
     })
+
+    setTimeout(() => router.push(`/${encodeURIComponent(pick)}`), 650)
   }
 
   return (
