@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.4.8-FF557A?style=for-the-badge&labelColor=0B0B12" alt="Lore Plugin"></a>
-  <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md"><img src="https://img.shields.io/badge/LUS-research-00DFF5?style=for-the-badge&labelColor=0B0B12" alt="LUS"></a>
-  <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/GENEALOGY_en.md"><img src="https://img.shields.io/badge/Between-gardener-7C3AED?style=for-the-badge&labelColor=0B0B12" alt="Between"></a>
-  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-genesis-8AB17D?style=for-the-badge&labelColor=0B0B12" alt="Vespi"></a>
+  <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.4.8-E5A83B?style=for-the-badge&labelColor=0B1026" alt="Lore Plugin"></a>
+  <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md"><img src="https://img.shields.io/badge/LUS-research-A9BEE8?style=for-the-badge&labelColor=0B1026" alt="LUS"></a>
+  <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/GENEALOGY_en.md"><img src="https://img.shields.io/badge/Between-gardener-6E8B5E?style=for-the-badge&labelColor=0B1026" alt="Between"></a>
+  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-genesis-F4EFE4?style=for-the-badge&labelColor=0B1026" alt="Vespi"></a>
 </p>
 
 ---
@@ -53,12 +53,12 @@ Interests: Spec-Driven Development, criterion preservation, Design Thinking, cry
 ### Connect
 
 <p>
-  <a href="https://github.com/andresanemic"><img src="https://img.shields.io/badge/GitHub-andresanemic-0B1320?style=for-the-badge&logo=github&logoColor=F4F0E8&labelColor=0B0B12" alt="GitHub"></a>
-  <a href="https://x.com/andresanemic"><img src="https://img.shields.io/badge/X-@andresanemic-FF557A?style=for-the-badge&logo=x&logoColor=0B0B12&labelColor=0B0B12" alt="X"></a>
-  <a href="https://www.linkedin.com/in/andresanemic/"><img src="https://img.shields.io/badge/LinkedIn-Andrés%20Peña%20Mellado-00DFF5?style=for-the-badge&logo=linkedin&logoColor=0B0B12&labelColor=0B0B12" alt="LinkedIn"></a>
-  <a href="https://t.me/andresanemic"><img src="https://img.shields.io/badge/Telegram-@andresanemic-22D9EE?style=for-the-badge&logo=telegram&logoColor=0B0B12&labelColor=0B0B12" alt="Telegram"></a>
-  <img src="https://img.shields.io/badge/Discord-andresanemic-F94F79?style=for-the-badge&logo=discord&logoColor=0B0B12&labelColor=0B0B12" alt="Discord">
-  <a href="mailto:andres@healthproof.cl"><img src="https://img.shields.io/badge/Email-andres@healthproof.cl-35E5F5?style=for-the-badge&logo=gmail&logoColor=0B0B12&labelColor=0B0B12" alt="Email"></a>
+  <a href="https://github.com/andresanemic"><img src="https://img.shields.io/badge/GitHub-andresanemic-F4EFE4?style=for-the-badge&logo=github&logoColor=F4F0E8&labelColor=0B1026" alt="GitHub"></a>
+  <a href="https://x.com/andresanemic"><img src="https://img.shields.io/badge/X-@andresanemic-A9BEE8?style=for-the-badge&logo=x&logoColor=0B0B12&labelColor=0B1026" alt="X"></a>
+  <a href="https://www.linkedin.com/in/andresanemic/"><img src="https://img.shields.io/badge/LinkedIn-Andrés%20Peña%20Mellado-6E8FB5?style=for-the-badge&logo=linkedin&logoColor=0B0B12&labelColor=0B1026" alt="LinkedIn"></a>
+  <a href="https://t.me/andresanemic"><img src="https://img.shields.io/badge/Telegram-@andresanemic-7FD4E8?style=for-the-badge&logo=telegram&logoColor=0B0B12&labelColor=0B1026" alt="Telegram"></a>
+  <img src="https://img.shields.io/badge/Discord-andresanemic-E5A83B?style=for-the-badge&logo=discord&logoColor=0B0B12&labelColor=0B1026" alt="Discord">
+  <a href="mailto:andres@healthproof.cl"><img src="https://img.shields.io/badge/Email-andres@healthproof.cl-F4EFE4?style=for-the-badge&logo=gmail&logoColor=0B0B12&labelColor=0B1026" alt="Email"></a>
 </p>
 
 ---
