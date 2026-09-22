@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/DWYL7vz.png" alt="Lore — Local fine-tuning, you are the trainer" width="100%">
+  <img src="./vespi-cover.png" alt="Vespi — a garden where distinct bodies coordinate" width="100%">
 </p>
 
 <h1 align="center">Andrés Peña Mellado</h1>
@@ -13,6 +13,7 @@
   <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.4.8-FF557A?style=for-the-badge&labelColor=0B0B12" alt="Lore Plugin"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md"><img src="https://img.shields.io/badge/LUS-research-00DFF5?style=for-the-badge&labelColor=0B0B12" alt="LUS"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/GENEALOGY_en.md"><img src="https://img.shields.io/badge/Between-gardener-7C3AED?style=for-the-badge&labelColor=0B0B12" alt="Between"></a>
+  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-genesis-8AB17D?style=for-the-badge&labelColor=0B0B12" alt="Vespi"></a>
 </p>
 
 ---
@@ -35,6 +36,7 @@ My current focus is **LUS** — a research program on how shared human–AI expe
 |---|---|---|
 | **LUS** | Research program on the Between, criterion and distillation | [`docs/LUS_en.md`](https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md) · [Public NotebookLM](https://notebooklm.google.com/notebook/6191db3f-3f9b-4412-b792-86a081b79450) |
 | **Lore Plugin** | Provider-neutral SDD kit — 7 skills, 6 pieces, human threshold | [`andresanemic/lore-plugin`](https://github.com/andresanemic/lore-plugin) |
+| **Vespi** | Distinct bodies, bounded authority — operations that return time, not throughput | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) |
 | **Tellus Cooperative** | General Editor — community journalism pilot (Sept 2026) | [`Tellus-Cooperative`](https://github.com/Tellus-Cooperative) · [blog](https://blog.telluscoop.com/) |
 | **Poems** | Personal portfolio — code by day, poetry by night | [`andresanemic/andresanemic`](https://github.com/andresanemic/andresanemic) |
 
