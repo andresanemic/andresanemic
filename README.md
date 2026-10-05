@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.4.8-E5A83B?style=for-the-badge&labelColor=0B1026" alt="Lore Plugin"></a>
+  <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.4.9-E5A83B?style=for-the-badge&labelColor=0B1026" alt="Lore Plugin"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md"><img src="https://img.shields.io/badge/LUS-research-A9BEE8?style=for-the-badge&labelColor=0B1026" alt="LUS"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/GENEALOGY_en.md"><img src="https://img.shields.io/badge/Between-gardener-6E8B5E?style=for-the-badge&labelColor=0B1026" alt="Between"></a>
-  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-genesis-F4EFE4?style=for-the-badge&labelColor=0B1026" alt="Vespi"></a>
+  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-0.1.4-F4EFE4?style=for-the-badge&labelColor=0B1026" alt="Vespi"></a>
 </p>
 
 ---
@@ -35,8 +35,8 @@ My current focus is **LUS** — a research program on how shared human–AI expe
 | Project | What it is | Where to find it |
 |---|---|---|
 | **LUS** | Research program on the Between, criterion and distillation | [`docs/LUS_en.md`](https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md) · [Public NotebookLM](https://notebooklm.google.com/notebook/6191db3f-3f9b-4412-b792-86a081b79450) |
-| **Lore Plugin** | Provider-neutral SDD kit — 7 skills, 6 pieces, human threshold | [`andresanemic/lore-plugin`](https://github.com/andresanemic/lore-plugin) |
-| **Vespi** | Distinct bodies, bounded authority — operations that return time, not throughput | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) |
+| **Lore Plugin** | Provider-neutral SDD kit — 8 skills, 6 pieces, human threshold (2.4.9, Oct 2026) | [`andresanemic/lore-plugin`](https://github.com/andresanemic/lore-plugin) |
+| **Vespi** | Distinct bodies, bounded authority — operations that return time, not throughput (kernel 0.1.4, Oct 2026) | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) |
 | **Tellus Cooperative** | General Editor — community journalism pilot (Sept 2026) | [`Tellus-Cooperative`](https://github.com/Tellus-Cooperative) · [blog](https://blog.telluscoop.com/) |
 | **Poems** | Personal portfolio — code by day, poetry by night | [`andresanemic/andresanemic`](https://github.com/andresanemic/andresanemic) |
 
@@ -58,7 +58,7 @@ Interests: Spec-Driven Development, criterion preservation, Design Thinking, cry
   <a href="https://www.linkedin.com/in/andresanemic/"><img src="https://img.shields.io/badge/LinkedIn-Andrés%20Peña%20Mellado-6E8FB5?style=for-the-badge&logo=linkedin&logoColor=0B0B12&labelColor=0B1026" alt="LinkedIn"></a>
   <a href="https://t.me/andresanemic"><img src="https://img.shields.io/badge/Telegram-@andresanemic-7FD4E8?style=for-the-badge&logo=telegram&logoColor=0B0B12&labelColor=0B1026" alt="Telegram"></a>
   <img src="https://img.shields.io/badge/Discord-andresanemic-E5A83B?style=for-the-badge&logo=discord&logoColor=0B0B12&labelColor=0B1026" alt="Discord">
-  <a href="mailto:andres@healthproof.cl"><img src="https://img.shields.io/badge/Email-andres@healthproof.cl-F4EFE4?style=for-the-badge&logo=gmail&logoColor=0B0B12&labelColor=0B1026" alt="Email"></a>
+  <a href="mailto:a.leonardopm@gmail.com"><img src="https://img.shields.io/badge/Email-a.leonardopm@gmail.com-F4EFE4?style=for-the-badge&logo=gmail&logoColor=0B0B12&labelColor=0B1026" alt="Email"></a>
 </p>
 
 ---
