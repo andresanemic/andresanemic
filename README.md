@@ -24,7 +24,7 @@ Building in Web3 — General Editor of the community journalism pilot at **Tellu
 
 Teaching & research: part of the team that laid the bibliographic and methodological foundations for **Design Thinking** at UTEM's School of Computer Engineering (2023), and lecturer from 2023 to 2025. **Speaker at [KCD El Salvador 2023](https://www.credly.com/badges/ad17002a-16be-474b-ada4-d7ba0df3a0fd)**.
 
-My current focus is **LUS** — a research program on how shared human–AI experience can become criterion that participates in future decisions — and its technical arm, **Lore Plugin**: *local fine-tuning for your own tasks, and the one doing the training is you.*
+My current focus is **LUS** — a research program on how shared human–AI experience can become criterion that participates in future decisions — and its technical arm, **Lore Plugin**: *stop explaining your project to the AI every morning: with your approval, Lore turns lessons into project criteria the AI can use next time.*
 
 > **Gardener of the Between:** I keep what deserves to orient another decision and prune what no longer constrains anything. Poet when code sleeps.
 
@@ -36,7 +36,7 @@ My current focus is **LUS** — a research program on how shared human–AI expe
 |---|---|---|
 | **LUS** | Research program on the Between, criterion and distillation | [`docs/LUS_en.md`](https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md) · [Public NotebookLM](https://notebooklm.google.com/notebook/6191db3f-3f9b-4412-b792-86a081b79450) |
 | **Lore Plugin** | Provider-neutral SDD kit — 9 skills, 6 pieces, human threshold (2.5.1, Oct 2026) | [`andresanemic/lore-plugin`](https://github.com/andresanemic/lore-plugin) · [Release 2.5.1](https://github.com/andresanemic/lore-plugin/releases/tag/v2.5.1) · [Setup tutorial](https://github.com/andresanemic/lore-plugin/blob/main/docs/TUTORIAL_MAESTRO_SO_LORE_v2.md) |
-| **Vespi** | Distinct bodies, bounded authority — operations that return time, not throughput (kernel 0.1.5, Oct 2026) | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) · [Kernel 0.1.5 release](https://github.com/andresanemic/vespi/releases/tag/v0.1.5-kernel) |
+| **Vespi** | The engine for building apps with AI on Stellar. You drive: bounded authority, a human gate and a receipt anyone can check (kernel 0.1.5, Oct 2026) | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) · [Kernel 0.1.5 release](https://github.com/andresanemic/vespi/releases/tag/v0.1.5-kernel) |
 | **Tellus Cooperative** | General Editor — community journalism pilot (Sept 2026) | [`Tellus-Cooperative`](https://github.com/Tellus-Cooperative) · [blog](https://blog.telluscoop.com/) |
 | **Poems** | Personal portfolio — code by day, poetry by night | [`andresanemic/andresanemic`](https://github.com/andresanemic/andresanemic) |
 
