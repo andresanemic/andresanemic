@@ -13,7 +13,7 @@
   <a href="https://github.com/andresanemic/lore-plugin"><img src="https://img.shields.io/badge/Lore-2.5.2-E5A83B?style=for-the-badge&labelColor=0B1026" alt="Lore Plugin"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md"><img src="https://img.shields.io/badge/LUS-research-A9BEE8?style=for-the-badge&labelColor=0B1026" alt="LUS"></a>
   <a href="https://github.com/andresanemic/lore-plugin/blob/main/docs/GENEALOGY_en.md"><img src="https://img.shields.io/badge/Between-gardener-6E8B5E?style=for-the-badge&labelColor=0B1026" alt="Between"></a>
-  <a href="https://github.com/andresanemic/vespi"><img src="https://img.shields.io/badge/Vespi-0.1.6-F4EFE4?style=for-the-badge&labelColor=0B1026" alt="Vespi"></a>
+  <a href="https://github.com/andresanemic/vespi/releases/tag/v0.1.7-kernel"><img src="https://img.shields.io/badge/Vespi-0.1.7-F4EFE4?style=for-the-badge&labelColor=0B1026" alt="Vespi"></a>
 </p>
 
 ---
@@ -36,7 +36,7 @@ My current focus is **LUS** — a research program on how shared human–AI expe
 |---|---|---|
 | **LUS** | Research program on the Between, criterion and distillation | [`docs/LUS_en.md`](https://github.com/andresanemic/lore-plugin/blob/main/docs/LUS_en.md) · [Public NotebookLM](https://notebooklm.google.com/notebook/6191db3f-3f9b-4412-b792-86a081b79450) |
 | **Lore Plugin** | Provider-neutral SDD kit — 9 skills, 6 pieces, human threshold (2.5.2, Oct 2026); 4,057 recorded clones in 98 days, clones and not unique people | [`andresanemic/lore-plugin`](https://github.com/andresanemic/lore-plugin) · [Release 2.5.2](https://github.com/andresanemic/lore-plugin/releases/tag/v2.5.2) · [Setup tutorial](https://github.com/andresanemic/lore-plugin/blob/main/docs/TUTORIAL_MAESTRO_SO_LORE_v2.md) |
-| **Vespi** | The engine for building apps with AI on Stellar. You drive: bounded authority, a human gate and a receipt anyone can check (kernel 0.1.6, Oct 2026; submitted to Find Your Way / HackMeridian) | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) · [Kernel 0.1.6 release](https://github.com/andresanemic/vespi/releases/tag/v0.1.6-kernel) |
+| **Vespi** | The engine for building apps with AI on Stellar. You drive: bounded authority, a human gate and a receipt anyone can check (kernel 0.1.7, Oct 2026; submitted to Find Your Way / HackMeridian) | [`andresanemic/vespi`](https://github.com/andresanemic/vespi) · [Kernel 0.1.7 release](https://github.com/andresanemic/vespi/releases/tag/v0.1.7-kernel) |
 | **Tellus Cooperative** | General Editor — community journalism pilot (Sept 2026) | [`Tellus-Cooperative`](https://github.com/Tellus-Cooperative) · [blog](https://blog.telluscoop.com/) |
 | **Poems** | Personal portfolio — code by day, poetry by night | [`andresanemic/andresanemic`](https://github.com/andresanemic/andresanemic) |
 
